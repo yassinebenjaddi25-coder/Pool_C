@@ -7,6 +7,5 @@ void print_char(char a)
 int main(void)
 {
     print_char('X');
-    print_char('\n');
     return 0;
 }
