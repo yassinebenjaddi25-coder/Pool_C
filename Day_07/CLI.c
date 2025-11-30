@@ -40,7 +40,7 @@ int main() {
     double num1, num2, resultat;
     char buffer[100]; // Pour créer la phrase à sauvegarder
 
-    printf("=== sCalculatrice CLI ===\n");
+    printf("=== Calculatrice CLI ===\n");
 
     do {
         // --- MENU ---
