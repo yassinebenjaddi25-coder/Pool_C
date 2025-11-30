@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <math.h>   // Nécessaire pour sqrt et pow
-#include <string.h> // Nécessaire pour gérer le texte de l'historique
+#include <math.h>   
+#include <string.h> 
 
 // --- VARIABLES GLOBALES POUR L'HISTORIQUE ---
 char historique[5][100]; // Tableau pour stocker 5 phrases de 100 caractères
@@ -8,9 +8,10 @@ int compteur_historique = 0;
 
 // --- FONCTION POUR AJOUTER À L'HISTORIQUE ---
 void ajouter_historique(char *calcul) {
-    // Si l'historique est plein (5 éléments), on décale tout vers le haut
+    int i;
+    // Si l'historique est plein (5 éléments)
     if (compteur_historique == 5) {
-        for (int i = 0; i < 4; i++) {
+        for (i = 0; i < 4; i++) {
             strcpy(historique[i], historique[i + 1]);
         }
         strcpy(historique[4], calcul); // On met le nouveau à la fin
@@ -22,10 +23,13 @@ void ajouter_historique(char *calcul) {
 
 // --- FONCTION FACTORIELLE ---
 long long factorielle(int n) {
-    if (n < 0) return -1; // Erreur
-    if (n == 0) return 1;
+    int i;
+    if (n < 0)
+     return -1; // Erreur
+    if (n == 0)
+     return 1;
     long long res = 1;
-    for (int i = 1; i <= n; i++) {
+    for (i = 1; i <= n; i++) {
         res *= i;
     }
     return res;
@@ -36,7 +40,7 @@ int main() {
     double num1, num2, resultat;
     char buffer[100]; // Pour créer la phrase à sauvegarder
 
-    printf("=== DAY 7: THE FINAL BOSS (Calculatrice CLI) ===\n");
+    printf("=== sCalculatrice CLI ===\n");
 
     do {
         // --- MENU ---
@@ -142,11 +146,12 @@ int main() {
                 break;
 
             case 9: // Afficher l'historique
+            int i;
                 printf("\n--- HISTORIQUE DES 5 DERNIERS CALCULS ---\n");
                 if (compteur_historique == 0) {
                     printf("L'historique est vide.\n");
                 } else {
-                    for (int i = 0; i < compteur_historique; i++) {
+                    for (i = 0; i < compteur_historique; i++) {
                         printf("%d. %s\n", i + 1, historique[i]);
                     }
                 }
